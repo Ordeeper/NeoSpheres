@@ -1,0 +1,91 @@
+@import "normalize.min.css";
+@import url("https://fonts.googleapis.com/css?family=Poppins:700|Poppins:400");
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --text: rgb(15, 1, 11);
+        --background: rgb(254, 246, 252);
+        --primary: rgb(238, 40, 185);
+        --secondary: rgb(244, 119, 130);
+        --accent: rgb(241, 93, 72);
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text: rgb(254, 241, 250);
+        --background: rgb(9, 1, 7);
+        --primary: rgb(212, 17, 160);
+        --secondary: rgb(137, 11, 22);
+        --accent: rgb(185, 34, 14);
+    }
+}
+
+:root {
+    --margin-lg: 0 12%;
+    --margin-md: 0 6%;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: 'Poppins';
+    font-weight: 700;
+    color: var(--text);
+}
+
+html {
+    font-size: 100%;
+}
+
+/* 16px */
+
+h1 {
+    font-size: 4.210rem;
+    /* 67.36px */
+}
+
+h2 {
+    font-size: 3.158rem;
+    /* 50.56px */
+}
+
+h3 {
+    font-size: 2.369rem;
+    /* 37.92px */
+}
+
+h4 {
+    font-size: 1.777rem;
+    /* 28.48px */
+}
+
+h5 {
+    font-size: 1.333rem;
+    /* 21.28px */
+}
+
+small {
+    font-size: 0.750rem;
+    /* 12px */
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    background-color: var(--background);
+    height: 100vh;
+    margin: var(--margin-md);
+}
