@@ -8,7 +8,36 @@
     <meta name="author" content="Ordeeper">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <script type="x-shader/x-vertex" id="vertexshader">
+        attribute float size;
+        attribute vec3 customColor;
+        varying vec3 vColor;
+
+        void main() {
+
+        vColor = customColor;
+        vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );
+        gl_PointSize = size * ( 300.0 / -mvPosition.z );
+        gl_Position = projectionMatrix * mvPosition;
+
+        }
+    </script>
+    <script type="x-shader/x-fragment" id="fragmentshader">
+        uniform vec3 color;
+        uniform sampler2D pointTexture;
+
+        varying vec3 vColor;
+
+        void main() {
+
+        gl_FragColor = vec4( color * vColor, 1.0 );
+        gl_FragColor = gl_FragColor * texture2D( pointTexture, gl_PointCoord );
+
+        }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="js/main.js" defer></script>
+    <script src="js/textAnimation.js" defer></script>
     <title>NeoSpheres</title>
 </head>
 
@@ -42,16 +71,18 @@
         </nav>
     </header>
     <section id="home">
+        <div id="magic"></div>
+    </section>
+    <section id="about-1">
         <div class="grid-container">
             <div class="column-text">
-                <h1>teste</h1>
+                <h1>
+                    Lorem Ips<br>
+                    Lorem Ipsum
+                </h1>
                 <p>
-                    Lorem ipsum Lorem ipsum
-                    Lorem ipsum Lorem ipsum
-                    Lorem ipsum Lorem ipsum
-                    Lorem ipsum Lorem ipsum
-                    Lorem ipsum Lorem ipsum
-                    Lorem ipsum Lorem ipsum
+                    Cada jogo é uma expressão única do estilo e visão. De narrativas envolventes a mecânicas inovadoras,
+                    tornamos sua visão realidade.
                 </p>
                 <a href="#" class="btn-home">
                     Comece Agora!
@@ -65,58 +96,49 @@
                 </a>
             </div>
             <div class="column-cover">
-                <img data-light-src="assets/home-cover-light.gif"
-                    data-dark-src="assets/home-cover-dark.gif" alt="">
-            </div>
-        </div>
-        <!--<div class="down-arrow">
-            <a href="#">
-                <object href="#" data="assets/down-arrow.svg" type="image/svg+xml">
-                    Your browser does not support SVG
-                </object>
-            </a>
-        </div>*/-->
-    </section>
-    <section id="about-1">
-        <div class="grid-container">
-            <div class="column-text">
-                <h1>teste</h1>
-                <p>
-                    Lorem ipsum Lorem ipsum
-                    Lorem ipsum Lorem ipsum
-                    Lorem ipsum Lorem ipsum
-                    Lorem ipsum Lorem ipsum
-                    Lorem ipsum Lorem ipsum
-                </p>
-                <a class="btn" href="#">Hover me</a>
-            </div>
-            <div class="column-cover">
-                <img data-light-src="assets/about-cover-light-1.gif"
-                    data-dark-src="assets/about-cover-dark-1.gif" alt="">
+                <img data-light-src="assets/home-cover-light.gif" data-dark-src="assets/home-cover-dark.gif" alt="">
             </div>
         </div>
     </section>
     <section id="about-2">
         <div class="grid-container">
             <div class="column-text">
-                <h1>teste</h1>
+                <h1>
+                    Lorem Ips<br>
+                    Lorem Ipsum
+                </h1>
                 <p>
-                    Lorem ipsum Lorem ipsum
-                    Lorem ipsum Lorem ipsum
-                    Lorem ipsum Lorem ipsum
-                    Lorem ipsum Lorem ipsum
-                    Lorem ipsum Lorem ipsum
+                    Impulsionamos a evolução dos jogos, proporcionando experiências únicas e revolucionárias
                 </p>
                 <a class="btn" href="#">Hover me</a>
             </div>
             <div class="column-cover">
-                <img data-light-src="assets/about-cover-light-2.gif"
-                    data-dark-src="assets/about-cover-dark-2.gif" alt="">
+                <img data-light-src="assets/about-cover-light-1.gif" data-dark-src="assets/about-cover-dark-1.gif"
+                    alt="">
+            </div>
+        </div>
+    </section>
+    <section id="about-3">
+        <div class="grid-container">
+            <div class="column-text">
+                <h1>
+                    Lorem Ips<br>
+                    Lorem Ipsum
+                </h1>
+                <p>
+                    Da mente à tela,  nossos jogos são frutos da criatividade sem limites
+                </p>
+                <a class="btn" href="#">Hover me</a>
+            </div>
+            <div class="column-cover">
+                <img data-light-src="assets/about-cover-light-2.gif" data-dark-src="assets/about-cover-dark-2.gif"
+                    alt="">
             </div>
         </div>
     </section>
     <main></main>
-    <footer></footer>
+    <footer>
+    </footer>
 </body>
 
 </html>

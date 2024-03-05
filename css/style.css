@@ -115,6 +115,7 @@ body {
     height: 100vh;
     width: 100%;
     background-color: var(--background);
+
 }
 
 header {
@@ -197,37 +198,41 @@ section {
     padding: var(--margin-lg);
     top: calc(var(--height-header));
     height: calc(100vh - var(--height-header));
+    width: 100%;
 }
 
 section .grid-container {
     display: grid;
     grid-template-columns: 1.5fr 2fr;
-    height: 100%;
+    height: 95%;
 }
 
-section:nth-of-type(even) .grid-container {
+section:nth-of-type(odd) .grid-container {
     grid-template-columns: 2fr 1.5fr;
 }
 
-section:nth-of-type(even) .grid-container .column-cover {
+section:nth-of-type(odd) .grid-container .column-cover {
     order: -1;
 }
 
-section:nth-of-type(even) .grid-container .column-cover img {
+section:nth-of-type(odd) .grid-container .column-cover img {
     margin: auto auto auto 0;
-}
-
-section#home .grid-container {
-    display: grid;
-    grid-template-columns: 1.5fr 2fr;
-    height: 95%;
 }
 
 .column-text {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 1.3em;
+    gap: 1.5em;
+}
+
+#magic {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: block;
+    top: 0;
+    left: 0;
 }
 
 .column-cover {
@@ -252,20 +257,6 @@ section#home .grid-container {
     margin: auto 0 auto auto;
 }
 
-section#home .down-arrow {
-    height: 10%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-section#home .down-arrow object {
-    width: auto;
-    height: auto;
-    max-width: 70%;
-    max-height: 70%;
-}
-
 .btn-home {
     background: var(--primary);
     color: var(--background);
@@ -281,7 +272,8 @@ section#home .down-arrow object {
     box-shadow: inset 0 0 1.6em -0.6em var(--accent);
     overflow: hidden;
     position: relative;
-    height: 2.8em;
+    width: 100%;
+    height: 3em;
     padding-right: 3.3em;
     cursor: pointer;
 }
@@ -320,10 +312,11 @@ section#home .down-arrow object {
 }
 
 .btn {
-    display: inline-block;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 9em;
-    line-height: 2.5em;
+    height: 3em;
     position: relative;
     border: 2px solid var(--primary);
     transition: color .5s;
