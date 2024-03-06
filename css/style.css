@@ -145,7 +145,7 @@ header nav {
 .nav-menu {
     display: flex;
     align-items: center;
-    gap: 5rem;
+    gap: 3.7rem;
 }
 
 .nav-menu a::after {
@@ -226,13 +226,21 @@ section:nth-of-type(odd) .grid-container .column-cover img {
     gap: 1.5em;
 }
 
+#home {
+    padding: 0;
+    position: relative;
+}
+
 #magic {
+    margin: auto;
     position: absolute;
     width: 100%;
     height: 100%;
     display: block;
     top: 0;
     left: 0;
+    right: 0;
+    bottom: 0;
 }
 
 .column-cover {
@@ -483,6 +491,10 @@ section:nth-of-type(odd) .grid-container .column-cover img {
     .hamburger.active .bar:nth-child(3) {
         transform: translateY(-9px) rotate(-45deg);
 
+    }
+
+    #home {
+        height: calc(90vw - var(--height-header));
     }
 
 }

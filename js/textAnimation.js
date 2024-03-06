@@ -105,12 +105,11 @@ class CreateParticles {
         this.buttom = false;
 
         this.data = {
-
-            text: 'Criatividade\nem cada Pixel.',
-            amount: 1500,
+            text: 'Criatividade\nem cada Pixel',
+            amount: 700,
             particleSize: 1,
             particleColor: 0xffffff,
-            textSize: 16,
+            textSize: 15,
             area: 250,
             ease: .05,
         }
